@@ -13,6 +13,14 @@ class LoginViewController: UIViewController {
     let signInButton = UIButton(type: .system)
     let errorMessageLabel = UILabel()
     
+    var username: String? {
+        return loginView.usernameTextField.text //this is an optional
+    }
+    
+    var password: String? {
+        return loginView.passwordTextField.text
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         style()
@@ -34,9 +42,7 @@ extension LoginViewController {
         errorMessageLabel.textAlignment = .center
         errorMessageLabel.textColor = .systemRed
         errorMessageLabel.numberOfLines = 0
-        errorMessageLabel.text = "Error Failure"
-        errorMessageLabel.isHidden = false
-        
+        errorMessageLabel.isHidden = true
     }
     
     private func layout() {
@@ -68,8 +74,28 @@ extension LoginViewController {
     }
 }
 
+// MARK: Actions
 extension LoginViewController {
     @objc func signInTapped(sender: UIButton) {
+        errorMessageLabel.isHidden = true
+        login()
+    }
+    
+    private func login() {
+        guard let username = username, let password = password else {
+            assertionFailure("Username / password should never be nil")
+            return
+        }
+
+        if username.isEmpty || password.isEmpty {
+            configureView(withMessage: "Username / password cannot be blank")
+            return
+        }
         
+    }
+    
+    private func configureView(withMessage message: String) {
+        errorMessageLabel.isHidden = false
+        errorMessageLabel.text = message
     }
 }
