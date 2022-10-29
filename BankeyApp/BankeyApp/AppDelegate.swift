@@ -30,7 +30,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             dummyViewController.logoutDelegate = self
             window?.rootViewController = loginViewController
             window?.rootViewController = mainViewController
-            
             mainViewController.selectedIndex = 2
             return true
         }
@@ -67,7 +66,6 @@ extension AppDelegate: OnboardingContainerViewControllerDelegate {
         setRootViewContoller(dummyViewController)
     }
 }
-
 extension AppDelegate: LogoutDelegate {
     func didLogout() {
         setRootViewContoller(loginViewController)
