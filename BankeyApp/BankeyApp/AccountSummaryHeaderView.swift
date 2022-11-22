@@ -9,4 +9,7 @@ import UIKit
 
 class AccountSummaryHeaderView: UIView {
     var tableView = UITableView()
+    
+    @IBOutlet var contentView: UIView!
+    
 }
