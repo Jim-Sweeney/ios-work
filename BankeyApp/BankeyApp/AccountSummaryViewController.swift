@@ -2,7 +2,7 @@
 //  AccountSummaryViewController.swift
 //  BankeyApp
 //
-//  Created by Jim Sweeney on 10/29/22.
+//  Created by Jim Sweeney on 11/2/22.
 //
 
 import UIKit
@@ -61,5 +61,3 @@ extension AccountSummaryViewController: UITableViewDelegate {
         
     }
 }
-
-
