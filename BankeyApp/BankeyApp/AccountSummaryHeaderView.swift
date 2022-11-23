@@ -37,4 +37,5 @@ class AccountSummaryHeaderView: UIView {
         contentView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
         contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
     }
+    
 }
