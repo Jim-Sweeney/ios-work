@@ -11,6 +11,7 @@ import UIKit
 class AccountSummaryCell: UITableViewCell {
     
     let typeLabel = UILabel()
+    let underLineView = UIView ()
     
     static let reuseID = "AccountSummaryCell"
     static let rowHieght: CGFloat = 100
@@ -33,15 +34,16 @@ extension AccountSummaryCell {
         typeLabel.adjustsFontForContentSizeCategory = true
         typeLabel.text = "Account type"
         
+        underLineView.translatesAutoresizingMaskIntoConstraints = false
+        underLineView.backgroundColor = appColor
+        
         contentView.addSubview(typeLabel)
+        contentView.addSubview(underLineView)
     }
     private func layout() {
         NSLayoutConstraint.activate([
             typeLabel.topAnchor.constraint(equalToSystemSpacingBelow: topAnchor, multiplier: 2),
             typeLabel.leadingAnchor.constraint(equalToSystemSpacingAfter: leadingAnchor, multiplier: 2)
-            
-            
-            
         ])
     }
 }
