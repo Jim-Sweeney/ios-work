@@ -14,6 +14,7 @@ class AccountSummaryCell: UITableViewCell {
     let underLineView = UIView ()
     
     static let reuseID = "AccountSummaryCell"
+    
     static let rowHieght: CGFloat = 100
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
